@@ -1,0 +1,88 @@
+CREDIT RISK CLASSIFICATION
+
+1.Overview of the Analysis
+
+Purpose of the analysis:
+
+Assessing the creditworthiness of borrowers is crucial for both the short-term and long-term sustainability of lending institutions. Therefore, leveraging historical lending data to determine borrowers' creditworthiness would be highly beneficial. This process involves training and evaluating a model focused on loan risk.
+
+Data and predictions:
+
+The dataset comprises information on 77,536 distinct loans, featuring details such as loan size, interest rate, borrower income, the ratio of loan size to income, total debt, and loan status, among other factors. Comprehensive information about the dataset can be found in the .csv file located in the Credit Risk folder, titled "lending_data.csv."
+
+Order of operations:
+
+Reading in .csv file
+
+Creating label set (y)
+
+Creating the features (X)
+
+Splitting the dataset into training and testing datasets for y and X
+
+Fitting a logistic regression model by using the training data (X_train and y_train)
+
+Saving the predictions on the testing data labels by using the testing feature data (X_test) and the fitted model
+
+Determine model performance
+
+Methods used:
+
+sklearn train_test_split
+
+sklearn logistic regression and its .fit and .predict functions
+
+confusion matrix
+
+classification report
+
+2. Results
+
+(a) The confusion matrix clarifies the model's performance when the true values are known. Below is the confusion matrix for this analysis, which is also available in the Report folder.
+
+Confusion Matrix
+
+True Positive (TP): 558
+
+True Negative (TN): 18679
+
+False Positive (FP): 80
+
+False Negative (FN): 67
+
+(b) The classification report offers insights into the model's performance across each loan status category. Below is the classification report for this analysis, which can also be found in the Report folder.
+
+Classification Report
+
+The two classifications are related to loans, namely Healthy and High Risk. Here are scores from the analysis
+
+(i) Precision metrics indicates the percentage of positive predictions (TP) relative to total positive predictions (TP + FP)
+
+Healthy: 1.0
+
+High Risk: 0.87
+
+(ii) Recall metrics indicates the precentatge of correct positive predictions (TP) relative to the total actual positives (TP + FN)
+
+Healthy: 1.0
+
+High Risk: 0.89
+
+(iii) f1 Score metrics are compared to 1.0 to provide insight on how well the model does of predicting
+
+Healthy: 1.0
+
+High Risk: 0.88
+
+(iv) Accuracy metric describes the number of correct instances out of the total number of instances, which is 99%
+
+(v) Support metrics denote the number of actual occurrences of a class in the dataset
+
+Healthy: 18759
+
+High Risk: 625
+
+(3) Summary
+
+In developing a methodology to assess borrower creditworthiness, the logistic regression model created in this exercise serves as a solid initial approach. It demonstrated high overall accuracy, with precision, recall, and F1 score exceeding 87% for high-risk loans. However, lenders typically prefer even higher accuracy, precision, and recall metrics, as their business relies on the repayment of the loan principal along with the associated interest. Even minor instances of partial repayments or full defaults can significantly affect their ability to continue lending.
+Enhancing the model could be beneficial. If additional data about the loans and borrowers is available—such as records of successful previous repayments or the number of open loans—these could contribute to more robust modeling and clearer scoring. It may be worthwhile to improve the model while simultaneously utilizing the current version (i.e., process improvement) or to slightly postpone its implementation to ensure the best possible model is ready for immediate future use.
